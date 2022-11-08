@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Lucas Persson Öhlin - SUT22
+using System;
 
 namespace OOP3 {
 
@@ -6,14 +7,16 @@ namespace OOP3 {
 
         static void Main(string[] args) {
 
-            //Constructing three new objects from the three respective class's constructors
-            var circel = new Circel(5);
-            var fyrkant = new Fyrkant(6);
-            var rektangel = new Rektangel(7, 10);
+            Geometri geometri;
 
-            Console.WriteLine($"Area Circel: {circel.Area()}");
-            Console.WriteLine($"Area Fyrkant: {fyrkant.Area()}");
-            Console.WriteLine($"Area Rektangel: {rektangel.Area()}");
+            geometri = new Circel(5);
+            Console.WriteLine($"Area Circel: {geometri.Area()}");
+
+            geometri = new Fyrkant(6);
+            Console.WriteLine($"Area Fyrkant: {geometri.Area()}");
+
+            geometri = new Rektangel(7, 10);           
+            Console.WriteLine($"Area Rektangel: {geometri.Area()}");
 
         }
 
