@@ -7,30 +7,30 @@ namespace OOP3 {
 
         static void Main(string[] args) {
 
-            Geometri geometri;
+            Geometry geometry;
 
-            geometri = new Circel(5);
-            Console.WriteLine($"Area Circel: {geometri.Area()}");
+            geometry = new Circle(5);
+            Console.WriteLine($"Area Circle: {geometry.Area()}");
 
-            geometri = new Fyrkant(6);
-            Console.WriteLine($"Area Fyrkant: {geometri.Area()}");
+            geometry = new Square(6);
+            Console.WriteLine($"Area Square: {geometry.Area()}");
 
-            geometri = new Rektangel(7, 10);           
-            Console.WriteLine($"Area Rektangel: {geometri.Area()}");
+            geometry = new Rectangle(7, 10);           
+            Console.WriteLine($"Area Rectangle: {geometry.Area()}");
 
         }
 
     }
 
     //Abstract makes the class restricted so it cannot be used to create objects (to access it, it must be inherited from another class).
-    abstract class Geometri {
+    abstract class Geometry {
 
         public abstract double Area();
 
     }
 
     //Just to be pedantic I wrote out "internal" which is there by default mind you... Just to teach myself that it's there for future projects
-    internal class Circel : Geometri {
+    internal class Circle : Geometry {
 
         //Private since we don't access these variables from outside the class
         private float pi = 3.141f;
@@ -39,7 +39,7 @@ namespace OOP3 {
         //The data is easily accessed and still premote flexiblity and safety
         private double radius { get; set; }
 
-        public Circel(double radius) {
+        public Circle(double radius) {
 
             this.radius = radius;
 
@@ -54,11 +54,11 @@ namespace OOP3 {
 
     }
 
-    internal class Fyrkant : Geometri {
+    internal class Square : Geometry {
 
         private double size { get; set; }
 
-        public Fyrkant(double size) {
+        public Square(double size) {
 
             this.size = size;
 
@@ -73,15 +73,16 @@ namespace OOP3 {
 
     }
 
-    internal class Rektangel : Geometri {
+    internal class Rectangle : Geometry {
 
         private double width { get; set; }
         private double length { get; set; }
 
-        public Rektangel(double width, double length) {
+        public Rectangle(double width, double length) {
 
             this.width = width;
             this.length = length;
+
         }
 
         public override double Area() {
